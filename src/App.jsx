@@ -10,9 +10,14 @@ import Projects from './Pages/Projects';
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
-  
+  useGSAP(function(){
+    const tl = gsap.timeline();
+
+  })
   return (
+    
     <div id="main">
+      {/* <Preloader/> */}
       <Header />
       <div id="page1">
         <Page1 />
