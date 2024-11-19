@@ -25,8 +25,8 @@ function Page1() {
 
 
   return (
-    <div onMouseMove={(e)=>{mouseMoving(e)}} className=' relative h-screen w-full bg-[#f6f4f4] p-7'>
-      <div id='page-in' className=' relative h-full p-28 w-full shadow-xl shadow-gray-300 rounded-[50px] bg-[#1D1D1C]'>
+    <div onMouseMove={(e)=>{mouseMoving(e)}} className=' relative h-screen w-full bg-[#f6f4f4] py-3 px-7'>
+      <div id='page-in' className=' relative h-full p-28 w-full shadow-md shadow-gray-300 rounded-[50px] bg-[#1D1D1C]'>
         <TiltText tiltRef={tiltRef} />
         <PageBottom/>
       </div>

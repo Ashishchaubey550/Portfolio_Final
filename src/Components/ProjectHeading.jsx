@@ -4,21 +4,23 @@ import gsap from 'gsap'
 function ProjectHeading() {
   useGSAP(() => {
     gsap.from("h2", {
-      y: 100,
+      y: 110,
       opacity: 0,
-      duration: 1,
-      delay: 1,
+      duration: 0.5,
       ease: "power2.out",
-      stagger: 0.5,
+      stagger: 0.2,
       scrollTrigger: {
         trigger: "h2",
-        start: "top 90%", // Adjust as needed
+        start: "top 80%",         // Start when h2 is 80% down the viewport
+        end: "bottom 30%",        // End when h2 is 20% up the viewport
+        toggleActions: "play pause resume reset", // Replays animation on scroll up
       },
     });
+    
   }, []);
   return (
     <>
-    <div className=' overflow-hidden mt-[150px] ml-[180px] p-10 flex  gap-4'>
+    <div className=' overflow-hidden mt-[10px] ml-[180px] p-10 flex  gap-4'>
       <h2 className='font-[Helvetica] text-[6vw] font-black uppercase underline text-[#666666]'>01.</h2>
       <div className='flex flex-col leading-none '>
         <h2 className=' font-[Helvetica] text-[6vw] font-black text-[#ABABAA]  uppercase'>The</h2>

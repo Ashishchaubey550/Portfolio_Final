@@ -4,20 +4,27 @@ import React from 'react';
 
 function Header() {
     useGSAP(function(){
-        gsap.to("button", {
-            x:90,
-            duration: 2,
-            ease: 'circ.in',
-            delay:2,
-            repeat: Infinity, // Repeat the shake
-            yoyo: true // Reverse the animation back
-        });
+// Create a timeline
+const tl = gsap.timeline({
+  repeat: -1,           // Repeat infinitely
+  repeatDelay: 3        // 5-second pause after the entire timeline completes
+});
+
+tl.to("button", {
+  x: 90,
+  duration: 1,
+  ease: 'circ.in',
+  yoyo: true,           // Reverse the animation back
+  repeat: 1,            // Repeat the shake once (2 shakes in total)
+  yoyoEase: "circ.out"  // Add easing on the yoyo
+});
+
     })
 
 
 
   return (
-    <nav className="font-[Helvetica] z-10 fixed flex justify-between items-center h-[10vh] w-full text-[1.8vh] uppercase text-[#AAABAB]   py-[60px] px-[90px]">
+    <nav className="font-[Helvetica] z-10 fixed flex justify-between items-center h-[5vh] w-full text-[1.8vh] uppercase text-[#AAABAB]   py-[40px] px-[90px]">
       <div className="flex gap-6 font-bold">
         <a href="" className="hover:text-[#F5F5F5]">Ashish</a>
       </div>
